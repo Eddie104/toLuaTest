@@ -1142,9 +1142,12 @@ namespace LuaInterface
         public static extern bool tolua_isvptrtable(IntPtr L, int index);
 
         public static int toluaL_exception(IntPtr L, Exception e)
-        {            
-            LuaException.luaStack = new LuaException(e.Message, e, 2);            
+        {
+            LuaException.luaStack = new LuaException(e.Message, e, 2);
             return tolua_error(L, e.Message);
+        //     LuaException.luaStack = new LuaException(e.Message, e, 2);
+        //     string msg = string.Format("{0}\r\n{1}", LuaException.luaStack.Message, LuaException.luaStack.StackTrace);
+        //     return tolua_error(L, msg);
         }
 
         public static int toluaL_exception(IntPtr L, Exception e, object o, string msg)
@@ -1153,7 +1156,7 @@ namespace LuaInterface
             {
                 msg = e.Message;
             }
-            
+
             LuaException.luaStack = new LuaException(msg, e, 2);
             return tolua_error(L, msg);
         }
