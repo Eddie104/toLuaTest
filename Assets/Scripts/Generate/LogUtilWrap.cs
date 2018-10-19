@@ -8,6 +8,7 @@ public class LogUtilWrap
 	{
 		L.BeginStaticLibs("LogUtil");
 		L.RegFunction("Info", Info);
+		L.RegFunction("Warn", Warn);
 		L.RegFunction("Debug", Debug);
 		L.RegFunction("Error", Error);
 		L.EndStaticLibs();
@@ -21,6 +22,22 @@ public class LogUtilWrap
 			ToLua.CheckArgsCount(L, 1);
 			string arg0 = ToLua.CheckString(L, 1);
 			LogUtil.Info(arg0);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int Warn(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			string arg0 = ToLua.CheckString(L, 1);
+			LogUtil.Warn(arg0);
 			return 0;
 		}
 		catch (Exception e)

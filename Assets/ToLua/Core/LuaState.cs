@@ -1995,12 +1995,12 @@ namespace LuaInterface
                 delegateMap.Clear();
                 funcRefMap.Clear();
                 funcMap.Clear();
-                metaMap.Clear();                
+                metaMap.Clear();
                 typeMap.Clear();
                 enumMap.Clear();
                 preLoadMap.Clear();
-                genericSet.Clear();                                
-                LuaDLL.lua_close(L);                
+                genericSet.Clear();
+                LuaDLL.lua_close(L);
                 translator.Dispose();
                 stateMap.Remove(L);
                 translator = null;

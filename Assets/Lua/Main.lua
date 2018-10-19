@@ -6,9 +6,9 @@ function Main()
 
 	print("logic start")
 
-    local bundle = AssetBundle.LoadFromFile(Application.dataPath .. '/AssetBundles/furni')
-    local prefab = bundle:LoadAsset('floor_001')
-    local newBox = GameObject.Instantiate(prefab)
+    -- local bundle = AssetBundle.LoadFromFile(Application.dataPath .. '/AssetBundles/furni')
+    -- local prefab = bundle:LoadAsset('floor_001')
+    -- local newBox = GameObject.Instantiate(prefab)
     -- newBox.transform.position = Vector3(0, 0, 0)
 
     -- prefab = bundle:LoadAsset('furni_001')
@@ -21,6 +21,9 @@ function Main()
 
     local t = string.split('a,b,c', ',')
     print(t)
+    dump({a = 1, b = 2})
+
+    LogUtil.Info(Helper.DecodeBase64('eJwz1DEkFaqRrGNUz6ieUT1DQQ8AkMG8Sw=='));
 end
 
 --场景切换通知
