@@ -1,4 +1,13 @@
 require("libra.init")
+
+function test()
+    LogUtil.Info('this is info');
+    LogUtil.Debug('this is debug');
+    LogUtil.Error('this is error');
+
+    LogUtil.Info(Helper.DecodeBase64('eJwz1DEkFaqRrGNUz6ieUT1DQQ8AkMG8Sw=='));
+end
+
 --主入口函数。从这里开始lua逻辑
 function Main()
     -- 安卓平台如果使用luajit的话，记得在lua最开始执行的地方请开启 jit.off()，性能会提升N倍。
@@ -15,15 +24,20 @@ function Main()
     -- newBox = GameObject.Instantiate(prefab)
     -- newBox.transform.position = Vector3(0, 0, 0)
 
-    LogUtil.Info('this is info');
-    LogUtil.Debug('this is debug');
-    LogUtil.Error('this is error');
+    -- test()
 
-    local t = string.split('a,b,c', ',')
-    print(t)
-    dump({a = 1, b = 2})
 
-    LogUtil.Info(Helper.DecodeBase64('eJwz1DEkFaqRrGNUz6ieUT1DQQ8AkMG8Sw=='));
+    -- UpdateBeat:Add(Update, self)
+
+
+    -- local role = GameObject.Find('Body')
+    -- role.transform.position = Vector3(1, 0, 0)
+    local body = GameObject.FindGameObjectWithTag('Role_Body')
+    local s = body.transform:GetComponent(typeof(SpriteRenderer))
+    print(s)
+--     SpriteRenderer sr = obj.transform.GetComponent<SpriteRenderer>();
+--    Sprite sprite = Resources.Load("Textrues/XXX", typeof(Sprite)) as Sprite;
+--    sr.sprite = sprite;
 end
 
 --场景切换通知
@@ -33,4 +47,8 @@ function OnLevelWasLoaded(level)
 end
 
 function OnApplicationQuit()
+end
+
+function Update()
+    LogUtil.Debug('aaa')
 end

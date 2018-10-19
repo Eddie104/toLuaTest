@@ -4,16 +4,18 @@ using UnityEditor;
 using UnityEngine;
 public class AesstBundle : MonoBehaviour {
 
-    [MenuItem ("AssetBundle/Package")]
+    [MenuItem ("Tools/Package AssetBundle")]
     private static void PackageBuddle () {
-        Debug.Log ("Packaging AssetBundle...");
-        string abPath = "./Assets/AssetBundles";
-        if (!Directory.Exists (abPath)) {
-            Directory.CreateDirectory (abPath);
-        }
+        Debug.Log ("<color=#FF0000>Packaging AssetBundle...</color>");
+        string abPath = Application.dataPath + "/AssetBundles";
+        Directory.Delete (abPath, true);
+        Directory.CreateDirectory (abPath);
+        // if (!Directory.Exists (abPath)) {
+
+        // }
         BuildPipeline.BuildAssetBundles (abPath, BuildAssetBundleOptions.None, BuildTarget.StandaloneOSX);
         // AssetDatabase.Refresh ();
-        Debug.Log ("Done");
+        Debug.Log ("<color=#FF0000>Packaging AssetBundle Done</color>");
     }
 
     // [MenuItem ("Custom Bundle/Create Bundel Main")]

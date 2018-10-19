@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1154412631
+CRC: 2321618773
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 2c8f0adc9a4ec4a3c4f9238f44399845
+    Hash: e91ca239e4721b3dceb3e8c44d021e75
   TypeTreeHash:
     serializedVersion: 2
-    Hash: df9eda02bd7a7fa3cfd412e4c466a264
+    Hash: 84efe8a70a27dc8f7efd484857bb4459
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -23,16 +23,9 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
-- Class: 687078895
-  Script: {instanceID: 0}
 Assets:
 - Assets/Prefabs/furni_003.prefab
-- Assets/Images/furni_003.png
-- Assets/Images/furni_001.png
 - Assets/Prefabs/floor_001.prefab
 - Assets/Prefabs/furni_001.prefab
 - Assets/Prefabs/furni_002.prefab
-- Assets/Images/furni_002.png
-- Assets/Images/floor_001.png
-- Assets/Images/win.spriteatlas
 Dependencies: []
